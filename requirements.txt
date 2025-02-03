@@ -1,0 +1,4 @@
+requests==2.31.0
+sqlite3
+streamlit==1.29.0
+beautifulsoup4==4.12.3
