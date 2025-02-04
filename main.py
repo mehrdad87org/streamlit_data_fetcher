@@ -2,9 +2,17 @@ import requests
 import sqlite3
 import streamlit as st
 from bs4 import BeautifulSoup
+import os
+import atexit
+
+def delete_database_on_exit():
+    if os.path.exists('data.db'):
+        os.remove('data.db')
+
+atexit.register(delete_database_on_exit)
 
 def fetch_and_store_posts():
-    conn = sqlite3.connect('data.db')
+    conn = sqlite3.connect('data.db', check_same_thread=False)
     cursor = conn.cursor()
     cursor.execute("CREATE TABLE IF NOT EXISTS posts (user_id INTEGER, post_id INTEGER, title TEXT, body TEXT)")
     user_ids = range(1, 11)
@@ -22,7 +30,7 @@ def fetch_and_store_posts():
     conn.close()
 
 def scrape_and_store_news():
-    conn = sqlite3.connect('data.db')
+    conn = sqlite3.connect('data.db', check_same_thread=False)
     cursor = conn.cursor()
     cursor.execute("DROP TABLE IF EXISTS news")
     cursor.execute("CREATE TABLE IF NOT EXISTS news (title TEXT, body TEXT)")
@@ -37,7 +45,7 @@ def scrape_and_store_news():
     conn.close()
 
 def display_tech_news():
-    conn = sqlite3.connect('data.db')
+    conn = sqlite3.connect('data.db', check_same_thread=False)
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM news")
     data = cursor.fetchall()
@@ -52,7 +60,7 @@ def display_tech_news():
             st.markdown('<hr style="border: 1px solid blue">', unsafe_allow_html=True)
 
 def display_user_posts():
-    conn = sqlite3.connect('data.db')
+    conn = sqlite3.connect('data.db', check_same_thread=False)
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM posts")
     data = cursor.fetchall()
@@ -79,5 +87,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-#MEHRDAD_2025
