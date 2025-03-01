@@ -1,34 +1,21 @@
-# README
+# Animated Database Viewer
 
-## Project Overview
-
-This project is a Streamlit-based web application that fetches data from two sources:
-1. **JSONPlaceholder API**: Retrieves user posts and stores them in a SQLite database.
-2. **Digiato Website**: Scrapes tech news articles and stores them in the same SQLite database.
-
-The application displays the fetched data in a clean and interactive UI using Streamlit. The SQLite database (`data.db`) is automatically deleted when the Streamlit server process stops, ensuring a fresh start on subsequent runs.
-
----
+This is a Streamlit application that fetches and displays user posts from the JSONPlaceholder API and scrapes tech news from Digiato. The application uses SQLite to store the fetched data and features custom CSS animations for a visually appealing user interface.
 
 ## Features
 
-- Fetches and stores user posts from the JSONPlaceholder API.
-- Scrapes and stores tech news articles from the Digiato website.
-- Displays the stored data in a user-friendly interface.
-- Automatically deletes the SQLite database (`data.db`) when the Streamlit server stops.
-
----
+- **Fetch User Posts**: Retrieves user posts from the JSONPlaceholder API and stores them in an SQLite database.
+- **Scrape Tech News**: Scrapes the latest tech news from Digiato and stores the headlines and descriptions in the SQLite database.
+- **Custom Animations**: Utilizes custom CSS animations for a smooth and engaging user experience.
+- **Responsive Design**: The application is designed to be responsive and visually appealing on various screen sizes.
 
 ## Requirements
 
-To run this project, you need the following Python libraries installed:
+To run this application, you need to have the following Python packages installed:
 
 - `streamlit`
 - `requests`
 - `beautifulsoup4`
 - `sqlite3`
 
-You can install the required libraries using the following command:
-
-```bash
-pip install streamlit requests beautifulsoup4
+You can install these packages using the `requirements.txt` file provided.
