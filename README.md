@@ -1,21 +1,29 @@
-# Animated Database Viewer
+# Digiato News Scraper
 
-This is a Streamlit application that fetches and displays user posts from the JSONPlaceholder API and scrapes tech news from Digiato. The application uses SQLite to store the fetched data and features custom CSS animations for a visually appealing user interface.
+A Streamlit-based web application that scrapes, stores, and displays news articles from Digiato.com with a beautiful neon-themed UI.
+
+## Overview
+This application scrapes news articles from different categories on Digiato.com, stores them in a SQLite database, and provides an interactive web interface to view and search through the news. The application features pagination, category filtering, search functionality, and a contact section.
 
 ## Features
-
-- **Fetch User Posts**: Retrieves user posts from the JSONPlaceholder API and stores them in an SQLite database.
-- **Scrape Tech News**: Scrapes the latest tech news from Digiato and stores the headlines and descriptions in the SQLite database.
-- **Custom Animations**: Utilizes custom CSS animations for a smooth and engaging user experience.
-- **Responsive Design**: The application is designed to be responsive and visually appealing on various screen sizes.
+- News scraping from multiple categories
+- SQLite database storage
+- Interactive UI with Streamlit
+- Pagination system
+- Search functionality
+- Category filtering
+- Neon-themed UI with animations
+- Contact section with social media links
 
 ## Requirements
+- Python 3.8+
+- Streamlit
+- Requests
+- Beautiful Soup 4
+- SQLite3
 
-To run this application, you need to have the following Python packages installed:
-
-- `streamlit`
-- `requests`
-- `beautifulsoup4`
-- `sqlite3`
-
-You can install these packages using the `requirements.txt` file provided.
+## Installation
+1. Clone the repository
+2. Install the requirements:
+   ```bash
+   pip install -r requirements.txt
